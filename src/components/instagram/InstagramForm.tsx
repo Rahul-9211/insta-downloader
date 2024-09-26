@@ -8,6 +8,7 @@ import { fetchVideoInfoAction } from "@/lib/instagram/actions/fetchVideoInfo";
 import AlertError from "@/components/ui/AlertError";
 import DownloadButton from "@/components/ui/DownloadButton";
 import InputField from "@/components/ui/InputField";
+import RandomGradientProgressBar from "../loader/RandomProgressBar";
 
 const isValidFormInput = (postUrl: string) => {
   if (!postUrl) {
@@ -81,13 +82,16 @@ const downloadPostVideo = async (postUrl: string) => {
   }
 
   const { filename, videoUrl } = response.data;
-  await downloadFile(filename, videoUrl);
+  await downloadFile(`fastvideosave_${filename}`, videoUrl);
 };
+
+
 
 export default function InstagramForm() {
   const [postUrl, setPostUrl] = React.useState("");
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
+  
 
   function handleError(error: any) {
     if (error instanceof Exception) {
@@ -110,6 +114,7 @@ export default function InstagramForm() {
 
     try {
       await downloadPostVideo(postUrl);
+      setPostUrl("");
     } catch (error: any) {
       handleError(error);
     }
@@ -118,7 +123,8 @@ export default function InstagramForm() {
   }
 
   return (
-    <form
+    <>
+     <form
       className="flex w-full max-w-3xl flex-col items-center"
       onSubmit={handleSubmit}
     >
@@ -134,6 +140,7 @@ export default function InstagramForm() {
           onChange={(e) => setPostUrl(e.target.value)}
           isLoading={isLoading}
           handleClear={handleClear}
+          
           className="h-[50px] w-full rounded border-gray-400 text-sm focus:ring-white md:text-base"
           autoComplete="on"
           autoFocus
@@ -147,5 +154,8 @@ export default function InstagramForm() {
         />
       </div>
     </form>
+    
+   {isLoading && <RandomGradientProgressBar showSuccessMessage={!isLoading}/>}</>
+   
   );
 }

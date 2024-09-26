@@ -3,10 +3,6 @@ import Image from "next/image";
 import InstagramForm from "@/components/instagram/InstagramForm";
 
 import { cn } from "@/utils";
-import HowToDownload from "@/components/HowToDownload/HowToDownload";
-import Feature from "@/components/feature/Feature";
-import Feature2 from "@/components/feature/Feature2";
-import FAQSection from "@/components/FAQ";
 
 const FEATURES_LIST = [
   {
@@ -84,58 +80,16 @@ const FAQ_LIST = [
   },
 ];
 
-const menuItems = [
-  { name: 'Video', icon: (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-    </svg>
-  )},
-  { name: 'Photo', icon: (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
-    </svg>
-  )},
-  { name: 'Story', icon: (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
-    </svg>
-  )},
-  { name: 'Reels', icon: (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fillRule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 3.707a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L8.414 9H10a3 3 0 013 3v1a1 1 0 102 0v-1a5 5 0 00-5-5H8.414l1.293-1.293z" clipRule="evenodd" />
-    </svg>
-  )},
-  { name: 'IGTV', icon: (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-      <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm3 2h6v4H7V5zm8 8v2h1v-2h-1zm-2-2H7v4h6v-4zm2 0h1V9h-1v2zm1-4V5h-1v2h1zM5 5v2H4V5h1zm0 4H4v2h1V9zm-1 4h1v2H4v-2z" clipRule="evenodd" />
-    </svg>
-  )},
-]
-
 export default function HomePage() {
   return (
     <main id="main" className="flex w-full flex-1 flex-col">
       <section
         id="#download"
         className={cn(
-          "flex w-full flex-col items-center px-4 py-28 shadow-sm ",
-          "bg-gradient-to-b from-pink-500 via-purple-500 to-indigo-500"
+          "flex w-full flex-col items-center px-4 py-10 shadow-sm",
+          "bg-gradient-to-r from-purple-600 to-green-600"
         )}
       >
-       
-
-        <nav className="bg-white bg-opacity-20 rounded-full mb-8  max-w-2xl w-full">
-          <ul className="flex justify-between px-4">
-            {menuItems.map((item) => (
-              <li key={item.name} className="text-white px-6 rounded-full py-4  hover:bg-white hover:bg-opacity-10 cursor-pointer transition-colors">
-                <button className="flex items-center 1">
-                <span className="pr-1">  {item.icon}</span>
-                  <span className="text-md ">{item.name}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
         <h1
           className={cn(
             "py-2 text-center text-2xl font-extrabold text-white sm:text-4xl"
@@ -150,9 +104,9 @@ export default function HomePage() {
         </p>
       </section>
 
-      <div className="mx-auto mb-12 mt-8 flex w-full max-w-5xl flex-col gap-8 px-2 text-sm md:px-4 md:text-base">
-<Feature/>
-        {/* <section id="welcome">
+      <div className="mx-auto mb-12 mt-8 flex w-full max-w-3xl flex-col gap-8 px-2 text-sm md:px-4 md:text-base">
+
+        <section id="welcome">
           <h2 className={cn("mb-4 text-xl font-bold sm:text-3xl")}>
             Welcome to Instagram Video Downloader
           </h2>
@@ -227,12 +181,7 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-        </section> */}
-
-        <HowToDownload/>
-        
-        <Feature2/>
-        <FAQSection/>
+        </section>
         <hr className="w-full" />
       </div>
     </main>

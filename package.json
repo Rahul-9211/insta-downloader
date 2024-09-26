@@ -12,12 +12,17 @@
     "test": "jest && del-cli --force ./.swc"
   },
   "dependencies": {
+    "@next/font": "^14.2.13",
     "@upstash/ratelimit": "^1.0.0",
     "@upstash/redis": "^1.25.1",
     "axios": "^1.5.1",
     "cheerio": "^1.0.0-rc.12",
+    "class-variance-authority": "^0.7.0",
     "lodash": "^4.17.21",
+    "lucide-react": "^0.446.0",
     "next": "^14.0.3",
+    "node-fetch": "^3.3.2",
+    "radix-ui": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0"
