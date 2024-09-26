@@ -12,7 +12,7 @@ import {
           Frequently asked questions(FAQ)
         </h1>
         <p className="text-gray-600 mb-6 text-center">
-          This FAQ provides information on frequent questions or concerns about the iGram . world downloader . if you can't
+          This FAQ provides information on frequent questions or concerns about the iGram . world downloader . if you can{"'"}t
           find the answer to your question, feel free to ask through email on our contact page.
         </p>
         <Accordion type="single" collapsible className="w-full">
@@ -37,7 +37,7 @@ import {
           <AccordionItem value="item-4">
             <AccordionTrigger>Is there a limit on the number of videos that can be downloaded using iGram?</AccordionTrigger>
             <AccordionContent>
-              The download limit may vary depending on the specific terms of service of iGram. It's best to check their official website for the most up-to-date information.
+              The download limit may vary depending on the specific terms of service of iGram. It{"'"}s best to check their official website for the most up-to-date information.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
