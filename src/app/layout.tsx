@@ -34,7 +34,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+      <meta name="google-site-verification" content="Vu1FnigGDboNlIeIP7b5IlNcXtZa5Nu4sdOWW7iNJnY" />
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+       {/* Google Tag Manager */}
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT8789G4S4"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-CT8789G4S4');
+            `,
+          }}
+        />
       </Head>
       <body
         className={cn(
