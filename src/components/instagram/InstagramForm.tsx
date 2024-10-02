@@ -51,13 +51,12 @@ const startFileDownload = (
 };
 
 const downloadFile = async (filename: string, downloadUrl: string) => {
-  console.log("🚀 ~ downloadFile ~ downloadUrl:", downloadUrl)
-  console.log("🚀 ~ downloadFile ~ filename:", filename)
   try {
     const response = await fetch(downloadUrl);
     const blob = await response.blob();
     const blobUrl = URL.createObjectURL(blob);
     startFileDownload(blobUrl, filename);
+    return blob;
   } catch (error) {
     startFileDownload(downloadUrl, filename, "_blank");
     console.log(error);
@@ -71,7 +70,6 @@ const downloadPostVideo = async (postUrl: string) => {
   }
 
   const response: APIResponse<VideoInfo> = await fetchVideoInfoAction(postUrl);
-  console.log("🚀 ~ downloadPostVideo ~ response:", response)
 
   if (response.status === "error") {
     throw new ClientException(response.message);
@@ -82,12 +80,15 @@ const downloadPostVideo = async (postUrl: string) => {
   }
 
   const { filename, videoUrl } = response.data;
-  await downloadFile(`fastvideosave_${filename}`, videoUrl);
+  const blog = await downloadFile(`fastvideosave_${filename}`, videoUrl);
+  return blog;
 };
 
+interface InstagramFormProps{
+  getBlobUrl?: (blob : Blob) => void
+}
 
-
-export default function InstagramForm() {
+export default function InstagramForm({getBlobUrl}: InstagramFormProps) {
   const [postUrl, setPostUrl] = React.useState("");
   const [errorMsg, setErrorMsg] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -113,8 +114,11 @@ export default function InstagramForm() {
     setErrorMsg("");
 
     try {
-      await downloadPostVideo(postUrl);
+      const blob = await downloadPostVideo(postUrl);
       setPostUrl("");
+      if (blob) {
+        getBlobUrl?.(blob); // Only call getBlobUrl if blob exists and the function is defined
+      }
     } catch (error: any) {
       handleError(error);
     }

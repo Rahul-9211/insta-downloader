@@ -30,7 +30,7 @@ const ScrollUpButton = () => {
           behavior: "smooth",
         })
       }
-      className={cn("fixed bottom-4 right-4 rounded-full bg-green-500 p-3", {
+      className={cn("fixed bottom-4 right-4 rounded-full bg-green-500 p-3 z-10", {
         hidden: !visible,
       })}
     >

@@ -7,6 +7,11 @@ import HowToDownload from "@/components/HowToDownload/HowToDownload";
 import Feature from "@/components/feature/Feature";
 import Feature2 from "@/components/feature/Feature2";
 import FAQSection from "@/components/FAQ";
+import useWindowDimensions from "@/utils/hooks/PageDimentions";
+// import { useState } from "react";
+import InstagramBlobViewer from "@/components/Blob/InstagramBlobViewer";
+import BlogClientComponent from "@/components/blog/BlogClientComponent";
+import { sampleModifiedBlogDataArray } from "@/utils/constant";
 
 const FEATURES_LIST = [
   {
@@ -113,9 +118,30 @@ const menuItems = [
 ]
 
 export default function HomePage() {
+
+  const posts = sampleModifiedBlogDataArray;
+  // const [videoBlob , setVideoBlob] = useState<Blob | null>(null);
+  // const getBlobUrl =(blob : Blob)=>{
+  //   console.log(blob);
+  //   setVideoBlob(blob);
+  // }
   return (
     <main id="main" className="flex w-full flex-1 flex-col">
-      <section
+       <div className={cn(
+          "flex w-full flex-col items-center px-4 py-32 shadow-sm ",
+          "bg-gradient-to-b from-pink-500 via-purple-500 to-indigo-500 "
+        )}>
+          <h1 className="text-white text-5xl font-semibold ">Blogs</h1>
+        </div>
+        <div className="mx-auto mb-12 mt-[-40px] rounded-md flex w-full max-w-5xl flex-col gap-8 px-2 text-sm md:px-4 md:text-base bg-white shadow-2xl pb-8">
+        <div className="font-sans font-workSans ">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Pass posts data to the client component */}
+        <BlogClientComponent posts={posts} />
+      </div>
+    </div>
+    </div>
+      {/* <section
         id="#download"
         className={cn(
           "flex w-full flex-col items-center px-4 py-28 shadow-sm ",
@@ -124,13 +150,13 @@ export default function HomePage() {
       >
        
 
-        <nav className="bg-white bg-opacity-20 rounded-full mb-8  max-w-2xl w-full">
-          <ul className="flex justify-between px-4">
+        <nav className="bg-white bg-opacity-20 rounded-full mb-8  max-w-3xl w-full md:max-w-3xl">
+          <ul className="flex justify-between px-4 flex-wrap md:flex-nowrap">
             {menuItems.map((item) => (
-              <li key={item.name} className="text-white px-6 rounded-full py-4  hover:bg-white hover:bg-opacity-10 cursor-pointer transition-colors">
+              <li key={item.name} className="text-white md:px-6 rounded-full py-4  hover:bg-white hover:bg-opacity-10 cursor-pointer transition-colors">
                 <button className="flex items-center 1">
                 <span className="pr-1">  {item.icon}</span>
-                  <span className="text-md ">{item.name}</span>
+                 <span className="text-md hidden sm:inline-block">{item.name}</span>
                 </button>
               </li>
             ))}
@@ -143,15 +169,18 @@ export default function HomePage() {
         >
           Instagram Video Downloader
         </h1>
-        <InstagramForm />
+        <InstagramForm  />
         <p className="my-4 text-center text-xs text-white md:text-sm">
           If the download opens a new page, just right click the video and then
           click `Save as video`
         </p>
-      </section>
-
+      </section> */}
       <div className="mx-auto mb-12 mt-8 flex w-full max-w-5xl flex-col gap-8 px-2 text-sm md:px-4 md:text-base">
-<Feature/>
+
+        {/* here i started  blog  */}
+       
+     
+{/* <Feature/> */}
         {/* <section id="welcome">
           <h2 className={cn("mb-4 text-xl font-bold sm:text-3xl")}>
             Welcome to Instagram Video Downloader
@@ -228,11 +257,10 @@ export default function HomePage() {
             ))}
           </ul>
         </section> */}
-
-        <HowToDownload/>
-        
+ {/* {videoBlob && <InstagramBlobViewer blob={videoBlob} />} */}
+        {/* <HowToDownload/>
         <Feature2/>
-        <FAQSection/>
+        <FAQSection/> */}
         <hr className="w-full" />
       </div>
     </main>

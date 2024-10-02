@@ -4,12 +4,12 @@ export default function Feature2() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-4xl font-bold text-center text-purple-600 mb-12">
-        iGram Instagram Video Downloader Features
+        FastVideo Instagram Video Downloader Features
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <FeatureCard
           title="Photos Downloader"
-          description="If you're looking for a way to save images from Instagram posts, then iGram's Instagram photo downloader is an excellent tool to consider. With iGram, you can download both individual post images and multiple Instagram photos from carousels."
+          description="If you're looking for a way to save images from Instagram posts, then FastVideo's Instagram photo downloader is an excellent tool to consider. With FastVideo, you can download both individual post images and multiple Instagram photos from carousels."
           images={[
             'https://picsum.photos/200/300',
             '/placeholder.svg?height=100&width=200',
@@ -26,13 +26,13 @@ export default function Feature2() {
         />
         <FeatureCard
           title="Video Downloader"
-          description="iGram was designed to allow you to download Instagram video for any purpose that suits you. With iGram, you can download both individual video and multiple videos from carousels."
+          description="FastVideo was designed to allow you to download Instagram video for any purpose that suits you. With FastVideo, you can download both individual video and multiple videos from carousels."
           images={['/placeholder.svg?height=150&width=300']}
           hasPlayIcon
         />
         <FeatureCard
           title="Reels Downloader"
-          description="Reels is a recently introduced video format on Instagram that mimics the concept of TikTok. iGram can assist you in downloading Instagram Reels video through our Instagram Reel downloader, allowing you to save and watch your preferred Reels videos at any time."
+          description="Reels is a recently introduced video format on Instagram that mimics the concept of TikTok. FastVideo can assist you in downloading Instagram Reels video through our Instagram Reel downloader, allowing you to save and watch your preferred Reels videos at any time."
           images={[
             'https://picsum.photos/200/300',
             'https://picsum.photos/200/300',
@@ -41,13 +41,13 @@ export default function Feature2() {
         />
         <FeatureCard
           title="IGTV Downloader"
-          description="IGTV video are typically lengthy, and if you don't have the time to watch them immediately, you can download them using iGram's IGTV downloader. This ensures that you can watch the videos later without needing an internet connection or worrying about the video being deleted."
+          description="IGTV video are typically lengthy, and if you don't have the time to watch them immediately, you can download them using FastVideo's IGTV downloader. This ensures that you can watch the videos later without needing an internet connection or worrying about the video being deleted."
           images={['https://picsum.photos/200/300']}
           hasPlayIcon
         />
         <FeatureCard
           title="Carousel Downloader"
-          description="Instagram's Carousel posts, also referred to as Album or Gallery posts, allow users to share multiple photos, videos, or a combination of both. If you want to download multiple photos from an Instagram gallery, iGram is an excellent tool to use. Our platform provides the best solution for downloading Instagram galleries."
+          description="Instagram's Carousel posts, also referred to as Album or Gallery posts, allow users to share multiple photos, videos, or a combination of both. If you want to download multiple photos from an Instagram gallery, FastVideo is an excellent tool to use. Our platform provides the best solution for downloading Instagram galleries."
           images={[
             'https://picsum.photos/200/300',
             'https://picsum.photos/200/300',

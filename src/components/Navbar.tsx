@@ -10,10 +10,19 @@ import IconButton from "@/components/ui/IconButton";
 import { cn } from "@/utils";
 import { Button } from "./ui/Button";
 
-const navbarLinks = [
+const navbarLinks = [ {
+  name: "About",
+  href: "/blog",
+  target: "_self",
+},
   {
-    name: "Home",
-    href: "/",
+    name: "Blog",
+    href: "/blog",
+    target: "_self",
+  },
+  {
+    name: "Privacy",
+    href: "/privacy-policy",
     target: "_self",
   },
 ];
@@ -55,25 +64,23 @@ const Navbar = () => {
         <div className="flex w-full items-center justify-between px-2">
           {/* Logo */}
           <Link href="/">
-          <div
-            aria-label="Logo"
-            className={cn(
-              "flex select-none items-center gap-1  font-extrabold",
-              "animate-rgb bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text text-transparent"
-            )}
-          >
-            
-            <Image
-              src={"/images/fastVideoSave.png"}
-              width={200}
-              height={50}
-              alt="logo"
-              className=""
-            />
-            
-            {/* <span className="text-2xl">Insta Download</span> */}
-           
-          </div>
+            <div
+              aria-label="Logo"
+              className={cn(
+                "flex select-none items-center gap-1  font-extrabold",
+                "animate-rgb bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text text-transparent py-2"
+              )}
+            >
+              <Image
+                src={"/images/favicon.png"}
+                width={70}
+                height={50}
+                alt="logo"
+                className=""
+              />
+
+              {/* <span className="text-2xl">Insta Download</span> */}
+            </div>
           </Link>
           {/* Mobile Nav Button */}
           <IconButton
@@ -86,27 +93,26 @@ const Navbar = () => {
           </IconButton>
         </div>
         {/* Desktop */}
-       {/*  <div className="hidden items-center gap-8 pr-4 text-lg font-light md:flex">
+         <div className="hidden items-center gap-8 pr-4 text-lg font-light md:flex">
           {navbarLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               target={link.target}
-              className="hover:text-purple-600 hover:underline"
+              className="hover:text-purple-600 hover:underline font-medium"
             >
               {link.name}
             </Link>
+       
+          ))}
+           </div>
+
+        <div className="hidden md:flex justify-center ">
+          <Button className="focus:ring-opacity-50text transform rounded-full bg-gradient-to-r from-purple-500 to-purple-700 px-6 py-2 font-semibold text-white transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500">
+            <EnvelopeIcon className="mr-2 h-5 w-4 text-sm" />
+            Connect
+          </Button>
         </div>
-          ))} */}
-         
-         <div className="flex justify-center ">
-      <Button
-        className="bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50text"
-      >
-        <EnvelopeIcon className="w-4 h-5 mr-2 text-sm" />
-        Connect 
-      </Button>
-    </div>
         {/* Mobile Nav */}
         {openNav && (
           <div className="relative z-[999] w-full md:hidden">
@@ -126,7 +132,12 @@ const Navbar = () => {
                 >
                   {link.name}
                 </Link>
+               
               ))}
+               <Button className="focus:ring-opacity-50text transform w-full bg-gradient-to-r from-purple-500 to-purple-700 px-6 py-2 font-semibold text-white transition-all duration-300 hover:scale-105 hover:from-purple-600 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <EnvelopeIcon className="mr-2 h-5 w-4 text-sm" />
+                Connect
+              </Button>
             </div>
           </div>
         )}
@@ -154,5 +165,5 @@ function EnvelopeIcon(props: React.SVGProps<SVGSVGElement>) {
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
     </svg>
-  )
+  );
 }

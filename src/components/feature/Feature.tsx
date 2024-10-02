@@ -13,7 +13,7 @@ export default function Feature() {
         unreliable applications and appreciate the videos, even if they are of lower quality.
       </p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
         <FeatureCard 
           icon={<ArrowDown className="w-8 h-8 text-white" />}
           title="Fast download"
