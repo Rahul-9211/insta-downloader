@@ -26,7 +26,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['picsum.photos'],
+    domains: ['picsum.photos',],
   },
   experimental: {
     fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }],

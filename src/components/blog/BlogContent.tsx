@@ -10,6 +10,12 @@ import { ModifiedBlogData } from "@/utils/interfaces";
 import { formatDateToShortString } from "@/utils/funtion";
 import { sampleModifiedBlogDataArray } from "@/utils/constant";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm"; // For GitHub flavored markdown
+import remarkToc from 'remark-toc'; // For generating Table of Contents
+import rehypeSlug from 'rehype-slug'; // For adding ids to headers
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'; // For adding anchor links to headers
+import rehypeRaw from "rehype-raw"; // Import rehypeRaw
 // import useWindowSize from "../../commonFunction/hooks/getWindowSize";
 
 interface SocialIconProps {
@@ -245,23 +251,24 @@ const BlogContent = ({ post }: Props) => {
             <div className="flex-4  mx-auto md:w-[75%] font-workSans">
               <div className="text-base leading-relaxed text-gray-700">
                 <div>
-                    <Image  src={post.thumbnail[0]?.url}
+                    {/* <Image  src={post.thumbnail[0]?.url}
                     alt="not loaded"
                     width={100}
                     height={100}
                     // layout="fill"
 
                     className="w-[100%] h-80"
-                    />
+                    /> */}
+                    <img src={post.thumbnail[0]?.url} alt="" className="w-[100%] max-h-[400px] rounded-2xl"/>
                  
                 </div>
                 <div className="prose mx-auto py-10 lg:prose-xl">
-                  {/* <ReactMarkdown
+                  <ReactMarkdown
   remarkPlugins={[remarkGfm, remarkToc]} // Handle GitHub-flavored markdown and TOC
   rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, rehypeRaw]} // Ensure proper handling of headings and raw HTML
 >
   {post.body}
-</ReactMarkdown> */}
+</ReactMarkdown>
                 </div>
               </div>
               <hr />
