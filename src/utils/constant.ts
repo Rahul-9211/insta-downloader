@@ -17,7 +17,7 @@ export const sampleModifiedBlogDataArray: ModifiedBlogData[] = [
     "thumbnail": [
       {
         url: "https://i.ibb.co/L01XtwR/Picture1.jpg",
-      },
+      }
     ],
   },
   {
@@ -36,7 +36,7 @@ export const sampleModifiedBlogDataArray: ModifiedBlogData[] = [
     "thumbnail": [
       {
         "url": "https://i.ibb.co/tYVqy2d/Picture1k.jpg"
-      },
+      }
     ],
   },
   {
@@ -54,7 +54,7 @@ export const sampleModifiedBlogDataArray: ModifiedBlogData[] = [
     "thumbnail": [
       {
         "url": "https://i.ibb.co/1Lpb1db/Picture133.jpg"
-      },
+      }
     ],
 },
 ];
