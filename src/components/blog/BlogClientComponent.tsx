@@ -16,7 +16,7 @@ export default function BlogClientComponent({ posts }: Props) {
   const postsPerPage = 9;
 
   // Get unique tags from the posts
-  const uniqueTags = Array.from(new Set(posts.map((post) => post.tag)));
+  const uniqueTags = Array.from(new Set(posts.map((post) => post?.tag)));
 
   // Filter posts by active tag
   const filteredPosts = activeTag
@@ -60,7 +60,7 @@ export default function BlogClientComponent({ posts }: Props) {
           {uniqueTags.map((tag) => (
             <li key={tag}>
               <button
-                onClick={() => handleTagClick(tag)}
+                onClick={() => handleTagClick(tag || "")}
                 className={`inset-0 hover:bg-[#E0E7FF] rounded-full py-2 px-4 mr-4 cursor-pointer text-base font-semibold ${
                   activeTag === tag ? 'text-[#6B70FC] bg-[#E0E7FF]' : 'text-[#344054]'
                 }`}

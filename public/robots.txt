@@ -1,3 +1,7 @@
-# *
+User-agent: nameOfBot
+Disallow: /admin/
+
 User-agent: *
 Allow: /
+
+Sitemap: https://fastvideosave.com/sitemap.xml

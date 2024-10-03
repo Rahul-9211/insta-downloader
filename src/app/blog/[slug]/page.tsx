@@ -325,11 +325,12 @@
 // export default BlogDetail;
 
 // pages/blog/[id].tsx
-// src/app/blog/[title]/page.tsx
-import axios from "axios";
+// src/app/blog/[title]/page.tsximport axios from "axios";
+
 import { ModifiedBlogData } from "@/utils/interfaces"; // Assuming this interface is defined
 import BlogContent from "@/components/blog/BlogContent"; // Import the client component
 import { sampleModifiedBlogDataArray } from "@/utils/constant";
+import Head from "next/head";
 
 interface Props {
   params: {
@@ -338,26 +339,28 @@ interface Props {
 }
 
 const BlogDetail = async ({ params }: Props) => {
-
-  console.log("🚀 ~ BlogDetail ~ title:", params)
   const { slug } = params;
 
   // Fetch the blog post data
   const post = sampleModifiedBlogDataArray.find((post: ModifiedBlogData) => {
-    // console.log("🚀 ~ BlogDetail ~ post:", post)
-    return post.slug === slug
-  })
+    return post.slug === slug;
+  });
+
   if (!post) {
     return <div>Blog post not found.</div>; // Handle the case where post is undefined
   }
 
   return (
-    <div>
-      <BlogContent post={post} />
-    </div>
+    <>
+     
+      <div>
+        <BlogContent post={post} />
+      </div>
+    </>
   );
 };
 
 export default BlogDetail;
+
 
 

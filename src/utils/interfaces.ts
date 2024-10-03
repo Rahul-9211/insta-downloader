@@ -78,7 +78,7 @@ interface ModifiedContentItem {
     title: string;
     author: string;
     dateTime: string;
-    tag: string;
+    tag?: string;
     metaTitle : string ;
     metaDescription : string;
     slug:string;

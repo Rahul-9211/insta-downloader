@@ -73,6 +73,10 @@ const BlogContent = ({ post }: Props) => {
 
   return (
     <div>
+       <head>
+        <title>{post.metaTitle}</title>
+        <meta name="description" content={post.metaDescription} />
+      </head>
       <div className=" font-workSans font-sans">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           {/* breadCrumb  */}
@@ -154,7 +158,7 @@ const BlogContent = ({ post }: Props) => {
           {/* Blog Meta (Tag and Date) */}
           <div className="mb-4 mt-4 flex items-center font-workSans">
             <span className="mr-4 rounded-2xl bg-[#E0E7FF] px-3 py-1 text-sm text-[#3830A2]">
-              {post.tag}
+              {/* {post.tag} */}
             </span>
             <span className="text-sm text-gray-500">
               <li> {formatDateToShortString(post.dateTime)}</li>

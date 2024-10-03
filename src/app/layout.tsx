@@ -23,8 +23,9 @@ const roboto = Roboto({
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 })
 
+// console.log("🚀 ~ mainMetadata:", mainMetadata)
 
-export const metadata = mainMetadata;
+// export const metadata = mainMetadata;
 
 export default function RootLayout({
   children,

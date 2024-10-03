@@ -5,13 +5,13 @@ export const mainMetadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
   keywords: [
-    "Instagram video download",
-    "IG video downloader",
-    "Save Instagram videos",
-    "Download IG videos",
-    "Instagram video saver",
-    "Online Instagram downloader",
-    "Reels downloader",
+    // "Instagram video download",
+    // "IG video downloader",
+    // "Save Instagram videos",
+    // "Download IG videos",
+    // "Instagram video saver",
+    // "Online Instagram downloader",
+    // "Reels downloader",
   ],
   authors: [
     {
@@ -20,29 +20,29 @@ export const mainMetadata: Metadata = {
     },
   ],
   creator: "",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImageUrl,
-        width: 1250,
-        height: 945,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImageUrl],
-    creator: "@riadazz",
-  },
+  // openGraph: {
+  //   type: "website",
+  //   locale: "en_US",
+  //   url: siteConfig.url,
+  //   title: siteConfig.name,
+  //   description: siteConfig.description,
+  //   siteName: siteConfig.name,
+  //   images: [
+  //     {
+  //       url: siteConfig.ogImageUrl,
+  //       width: 1250,
+  //       height: 945,
+  //       alt: siteConfig.name,
+  //     },
+  //   ],
+  // },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: siteConfig.name,
+  //   description: siteConfig.description,
+  //   images: [siteConfig.ogImageUrl],
+  //   creator: "@riadazz",
+  // },
   robots: {
     index: false,
     follow: true,
