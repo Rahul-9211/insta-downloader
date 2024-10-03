@@ -250,18 +250,14 @@ const BlogContent = ({ post }: Props) => {
             {/* Blog Content */}
             <div className="flex-4  mx-auto md:w-[75%] font-workSans">
               <div className="text-base leading-relaxed text-gray-700">
-                <div>
-                    {/* <Image  src={post.thumbnail[0]?.url}
-                    alt="not loaded"
-                    width={100}
-                    height={100}
-                    // layout="fill"
+              <div className="flex justify-center items-center">
+  <img 
+    src={post.thumbnail[0]?.url} 
+    alt="" 
+    className="max-w-full max-h-[400px] object-contain rounded-2xl" 
+  />
+</div>
 
-                    className="w-[100%] h-80"
-                    /> */}
-                    <img src={post.thumbnail[0]?.url} alt="" className="w-[100%] max-h-[400px] rounded-2xl"/>
-                 
-                </div>
                 <div className="prose mx-auto py-10 lg:prose-xl">
                   <ReactMarkdown
   remarkPlugins={[remarkGfm, remarkToc]} // Handle GitHub-flavored markdown and TOC
