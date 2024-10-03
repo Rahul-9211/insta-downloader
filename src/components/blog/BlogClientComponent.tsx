@@ -94,7 +94,7 @@ export default function BlogClientComponent({ posts }: Props) {
                     <span>{formatDateToShortString(callout.dateTime)}</span>
                   </span>
                 </h3>
-                <p className="font-semibold text-gray-900 text-xl mt-2">{callout.title}</p>
+                <p className="font-semibold text-gray-900 text-xl mt-2 font-workSans">{callout.title}</p>
               </div>
             ))
           ) : (

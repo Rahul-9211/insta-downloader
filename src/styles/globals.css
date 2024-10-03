@@ -24,9 +24,11 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: "Work Sans", sans-serif;
 }
-.font-roboto{
-  font-family: 'Roboto', sans-serif;
+.font-workSans{
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: "Work Sans", sans-serif;
 
 }
