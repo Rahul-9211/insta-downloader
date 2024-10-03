@@ -8,7 +8,7 @@ export default function Sitemap() {
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         {blogPosts.map((post) => (
           <url key={post.id}>
-            <loc>{`https://your-website.com/blog/${post.slug}`}</loc>
+            <loc>{`https://fastvideosave.com/blog/${post.slug}`}</loc>
             <lastmod>{new Date(post.updatedAt).toISOString()}</lastmod>
           </url>
         ))}
