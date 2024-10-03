@@ -11,7 +11,7 @@ import { Roboto } from '@next/font/google';
 import Head from "next/head";
 import '../styles/globals.css';
 import NewFooter from "@/components/NewFooter";
-
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const mainFont = MainFont({
   subsets: ["latin"],
@@ -33,11 +33,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <meta name="google-site-verification" content="Vu1FnigGDboNlIeIP7b5IlNcXtZa5Nu4sdOWW7iNJnY" />
+      </head>
       <Head>
       <meta name="google-site-verification" content="Vu1FnigGDboNlIeIP7b5IlNcXtZa5Nu4sdOWW7iNJnY" />
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
        {/* Google Tag Manager */}
-       <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT8789G4S4"></script>
+       {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT8789G4S4"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -47,7 +50,7 @@ export default function RootLayout({
               gtag('config', 'G-CT8789G4S4');
             `,
           }}
-        />
+        /> */}
       </Head>
       <body
         className={cn(
@@ -57,6 +60,7 @@ export default function RootLayout({
           mainFont.className
         )}
       >
+        <GoogleTagManager gtmId="G-CT8789G4S4" />
         <Navbar />
         <ScrollUpButton />
         {children}

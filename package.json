@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@next/font": "^14.2.13",
+    "@next/third-parties": "^14.2.14",
     "@upstash/ratelimit": "^1.0.0",
     "@upstash/redis": "^1.25.1",
     "axios": "^1.5.1",
