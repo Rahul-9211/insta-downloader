@@ -79,6 +79,7 @@ interface ModifiedContentItem {
     author: string;
     dateTime: string;
     tag: string;
+    slug:string;
     body: string;
     thumbnail: ModifiedThumbnail[];
   }

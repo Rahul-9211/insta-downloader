@@ -333,19 +333,19 @@ import { sampleModifiedBlogDataArray } from "@/utils/constant";
 
 interface Props {
   params: {
-    title: string; // Assuming title is used for fetching the blog post
+    slug: string; // Assuming title is used for fetching the blog post
   };
 }
 
 const BlogDetail = async ({ params }: Props) => {
 
   console.log("🚀 ~ BlogDetail ~ title:", params)
-  const { title } = params;
+  const { slug } = params;
 
   // Fetch the blog post data
   const post = sampleModifiedBlogDataArray.find((post: ModifiedBlogData) => {
     // console.log("🚀 ~ BlogDetail ~ post:", post)
-    return post.title === decodeURIComponent(title)
+    return post.slug === slug
   })
   if (!post) {
     return <div>Blog post not found.</div>; // Handle the case where post is undefined

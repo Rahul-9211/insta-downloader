@@ -77,7 +77,7 @@ export default function BlogClientComponent({ posts }: Props) {
           {currentPosts.length > 0 ? (
             currentPosts.map((callout) => (
               <div key={callout.id} className="group relative">
-                <Link href={`/blog/${callout.title}`}>
+                <Link href={`/blog/${callout.slug}`}>
                   <div className="shadow relative h-auto w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-1 lg:aspect-w-2 lg:aspect-h-1 group-hover:opacity-75 sm:h-64">
                     <img
                       alt={callout.title}
