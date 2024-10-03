@@ -11,3 +11,8 @@ export const siteConfig: SiteConfig = {
     github: "https://github.com//instagram-video-downloader",
   },
 };
+
+export const siteMapConfig = {
+  baseUrl: 'https://fastvideosave.com',
+};
+

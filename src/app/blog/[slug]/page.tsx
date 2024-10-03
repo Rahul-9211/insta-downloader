@@ -347,7 +347,7 @@ const BlogDetail = async ({ params }: Props) => {
   });
 
   if (!post) {
-    return <div>Blog post not found.</div>; // Handle the case where post is undefined
+    return <div className="text-center h-[72vh] align-middle  flex items-center justify-center"><span className="text-2xl pr-4">404</span>  Blog post not found.</div>; // Handle the case where post is undefined
   }
 
   return (
