@@ -30,7 +30,16 @@ export default function BlogClientComponent({ posts }: Props) {
   // Pagination logic
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filteredPosts
+  .slice(indexOfFirstPost, indexOfLastPost)
+  .sort((a: ModifiedBlogData, b: ModifiedBlogData) => {
+    const dateA = new Date(a.createdAt).getTime();
+    const dateB = new Date(b.createdAt).getTime();
+    
+    // For descending order (most recent first)
+    return dateB - dateA;
+  });
+
 
   // Handle tag click
   const handleTagClick = (tag: string) => {
