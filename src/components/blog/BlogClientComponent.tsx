@@ -75,9 +75,10 @@ export default function BlogClientComponent({ posts }: Props) {
       <div className="mx-auto max-w-2xl py-2 sm:py-3 lg:max-w-none lg:py-4">
         <div className="mt-6 grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {currentPosts.length > 0 ? (
-            currentPosts.map((callout) => (
-              <div key={callout.id} className="group relative">
+                currentPosts.map((callout) => (
                 <Link href={`/blog/${callout.slug}`}>
+
+              <div key={callout.id} className="group relative">
                   <div className="shadow relative h-auto w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-1 lg:aspect-w-2 lg:aspect-h-1 group-hover:opacity-75 sm:h-64">
                     <img
                       alt={callout.title}
@@ -85,7 +86,6 @@ export default function BlogClientComponent({ posts }: Props) {
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
-                </Link>
                 <h3 className="mt-6 text-sm text-gray-500">
                   <span className="flex font-medium text-sm font-workSans items-center">
                     <span className="inset-0 text-[#3830A2] bg-[#E0E7FF] rounded-2xl py-1 px-3 mr-4">
@@ -96,6 +96,8 @@ export default function BlogClientComponent({ posts }: Props) {
                 </h3>
                 <p className="font-semibold text-gray-900 text-xl mt-2 font-workSans">{callout.title}</p>
               </div>
+              </Link>
+
             ))
           ) : (
             <p>No posts available for this tag.</p>
