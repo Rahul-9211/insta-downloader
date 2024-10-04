@@ -24,6 +24,16 @@ interface SocialIconProps {
   children: React.ReactNode;
 }
 
+
+function removeUselessSymbols(text : string) {
+  // Regular expression to match common useless symbols
+  const uselessSymbolsRegex = /[^\w\s]/g;
+
+  // Replace useless symbols with an empty string
+  return text.replace(uselessSymbolsRegex, '');
+}
+
+
 const SocialIcon: React.FC<SocialIconProps> = ({
   href,
   ariaLabel,
@@ -181,7 +191,7 @@ const BlogContent = ({ post }: Props) => {
                         href={`#${heading.id}`}
                         className="font-workSans text-[#475467] text-base no-underline"
                       >
-                        {heading.text}
+                        {removeUselessSymbols(heading.text)}
                       </a>
                     </li>
                   ))}
