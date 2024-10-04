@@ -76,7 +76,7 @@ export default function BlogClientComponent({ posts }: Props) {
         <div className="mt-6 grid gap-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {currentPosts.length > 0 ? (
                 currentPosts.map((callout) => (
-                <Link href={`/blog/${callout.slug}`}>
+                <Link href={`/blog/${callout.slug}`} key={callout.id}>
 
               <div key={callout.id} className="group relative">
                   <div className="shadow relative h-auto w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-1 lg:aspect-w-2 lg:aspect-h-1 group-hover:opacity-75 sm:h-64">
