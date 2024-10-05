@@ -33,8 +33,8 @@ export default function BlogClientComponent({ posts }: Props) {
   const currentPosts = filteredPosts
   .slice(indexOfFirstPost, indexOfLastPost)
   .sort((a: ModifiedBlogData, b: ModifiedBlogData) => {
-    const dateA = new Date(a.createdAt).getTime();
-    const dateB = new Date(b.createdAt).getTime();
+    const dateA = new Date(a.dateTime).getTime();
+    const dateB = new Date(b.dateTime).getTime();
     
     // For descending order (most recent first)
     return dateB - dateA;
