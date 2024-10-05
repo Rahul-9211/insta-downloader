@@ -1,17 +1,12 @@
 import { Inter as MainFont } from "next/font/google";
-
 import "@/styles/globals.css";
 import { cn } from "@/utils";
-import { mainMetadata } from "@/configs/seo";
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollUpButton from "@/components/ScrollUpButton";
 import { Roboto } from '@next/font/google';
-import Head from "next/head";
-import '../styles/globals.css';
+import Script from 'next/script'; // Import Script from Next.js for managing external scripts
 import NewFooter from "@/components/NewFooter";
-import { GoogleTagManager } from '@next/third-parties/google';
 
 const mainFont = MainFont({
   subsets: ["latin"],
@@ -21,11 +16,7 @@ const roboto = Roboto({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
-})
-
-// console.log("🚀 ~ mainMetadata:", mainMetadata)
-
-// export const metadata = mainMetadata;
+});
 
 export default function RootLayout({
   children,
@@ -35,29 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <meta name="google-site-verification" content="Vu1FnigGDboNlIeIP7b5IlNcXtZa5Nu4sdOWW7iNJnY" />
-
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-      
+        <meta name="google-site-verification" content="Vu1FnigGDboNlIeIP7b5IlNcXtZa5Nu4sdOWW7iNJnY" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
-      <Head>
-      <meta name="google-site-verification" content="Vu1FnigGDboNlIeIP7b5IlNcXtZa5Nu4sdOWW7iNJnY" />
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-       {/* Google Tag Manager */}
-       {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT8789G4S4"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-CT8789G4S4');
-            `,
-          }}
-        /> */}
-      </Head>
       <body
         className={cn(
           "overflow-x-hidden bg-stone-50 text-black",
@@ -66,7 +40,24 @@ export default function RootLayout({
           mainFont.className
         )}
       >
-        <GoogleTagManager gtmId="G-CT8789G4S4" />
+        {/* Google Tag Manager */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-CT8789G4S4"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-CT8789G4S4');
+            `,
+          }}
+        />
+        
         <Navbar />
         <ScrollUpButton />
         {children}
