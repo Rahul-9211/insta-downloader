@@ -147,9 +147,9 @@ export const sampleModifiedBlogDataArray: ModifiedBlogData[] = [
 },
   {
   "id": "how-to-make-money-through-digital-marketing",
-  "createdAt": "2024-10-0T21:30:00.000Z",
-  "updatedAt": "2024-10-0T21:30:00.000Z",
-  "publishedAt": "2024-10-0T21:30:00.000Z",
+  "createdAt": "2024-10-05T21:30:00.000Z",
+  "updatedAt": "2024-10-05T21:30:00.000Z",
+  "publishedAt": "2024-10-05T21:30:00.000Z",
   "title": "Unlocking Financial Success: How to Make Money Through Digital Marketing",
   "metaTitle": "Discover the Secrets of Making Money Through Digital Marketing",
   "metaDescription": "Ready to boost your income online? Learn how to make money through digital marketing and unlock new opportunities for financial success with our expert tips.",
